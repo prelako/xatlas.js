@@ -24,8 +24,9 @@ echo "============================================="
     -s ERROR_ON_UNDEFINED_SYMBOLS=0 \
     -s ALLOW_MEMORY_GROWTH=1 \
     -s MALLOC=emmalloc \
+    -s EXPORT_ES6=1 \
     -s MODULARIZE=1 \
-    -s ENVIRONMENT='worker' \
+    -s ENVIRONMENT='node' \
     -s EXPORT_NAME="createXAtlasModule" \
     -o ./source/web/build/xatlas.js \
     --js-library ./source/web/jslib.js \
@@ -44,6 +45,7 @@ echo "============================================="
   rm -rf dist
   mkdir -p dist
   mv source/web/build/xatlas.wasm dist
+  mv source/web/build/xatlas.js dist
 #  mv source/web/build/xatlas.wasm.map dist
 
 )
